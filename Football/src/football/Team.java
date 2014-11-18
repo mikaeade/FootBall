@@ -21,6 +21,8 @@ public class Team {
 
     public void addPlayer() {
 
+        // jokaiselle pelaajalle oma numero
+        
         System.out.println("Anna pelipaikka");
         System.out.println("1. VasenHyokkääjä");
         System.out.println("2. KeskuHyökkääjä");
@@ -29,51 +31,74 @@ public class Team {
         System.out.println("5. VasenPuolustaja");
         System.out.println("6. OikeaPuolustaja");
 
-        int valinta = scan.nextInt();
-        valitsePeliPaikka(valinta);
+        int chosen = scan.nextInt();
+        addPlayerName(chosen);
 
-}
+    }
 
-public void valitsePeliPaikka(int pelipaikka)
-    {
-        switch(pelipaikka){
-        case 1: 
-            VasenHyokkaaja vh = new VasenHyokkaaja();
-            
-            vh.setNimi("Mika");
-            vh.setScoredGoals(1);
-            vh.harjoitusAikaTaulu();
-            vh.harjoitusOhjelma();
-            players.add(vh);
-            
-       //     jatka tästä, jossain pitää lukea pelaajan nimi ja muut tiedot
-            
+    public void addPlayerName(int gamePlace) {
+        System.out.println("Anna pelaajan Nimi: ");
+        String name = scan.next();
+        System.out.println("Anna pelaajan Numero: ");
+        Integer numero = scan.nextInt();
+        
+        
+        switch (gamePlace) {
+            case 1:{
+                VasenHyokkaaja player = new VasenHyokkaaja();
+                player.setName(name);
+                player.setHarjoitusOhjelma();
+                player.setHarjoitusAikaTaulu();
+                //vh.setPlayerNumber();
+                //
+                //
+                players.add(player);
+            }
+            break;
+            case 2:{
                 
-        case 2:
-         
-        case 3:
-        case 4:
-        case 5:    
-            
+                KeskusHyokkaaja player = new KeskusHyokkaaja();
+                player.setName(name);
+                player.setHarjoitusOhjelma();
+                player.setHarjoitusAikaTaulu();
+                players.add(player);
+            }   
+                break;
+            /*    
+             case 3:
+             OikeaHyokkaaja oh = new OikeaHyokkaaja();
+             break;
+             case 4:
+             Maalivahti mv = new Maalivahti();
+             break;
+             case 5:  
+             VasenPuolustaja vp = new VasenPuolustaja();
+             break;
+             case 6:
+             OikeaPuolustaja op = new OikeaPuolustaja();
+             break;
+             */
+            default:
 
+                System.out.println("Väärä valinta");
+        }
+    }
 
+    public void removePlayer() {
 
+    }
+    
+    public void listPlayer() {
+        
+        System.out.println("---- List of all Player");
+        
+        
+    }
+    
+    
+    public void trainPlayer() {
 
     }
 
-    }
 
-
-
-    
-    public void removePlayer(){
-    
-    };
-    
-    public void trainPlayer(){
-    
-    };
-    
-    
-    
 }

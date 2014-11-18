@@ -5,22 +5,26 @@
  */
 package football;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mikaeade
  */
 public abstract class Player {
     
+    private Scanner scan = new Scanner(System.in);
     private String name;
     private Integer scoredGoals;
-    //private String harjoistusOhjelma;
-    // private String harjoitusAikaTaulu;
+    protected String harjoistusOhjelma;
+    protected String harjoitusAikaTaulu;
+    protected Integer harjoitusAika;
 
-    public String getNimi() {
+    public String getName() {
         return name;
     }
 
-    public void setNimi(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -32,9 +36,21 @@ public abstract class Player {
         this.scoredGoals = scoredGoals;
     }
 
+    abstract void setPelaaOttelu();
+    abstract String getPelaaOttelu();
+    abstract void setHarjoitusOhjelma();
+    abstract void setHarjoitusOhjelma(String ohjelma);
+    abstract String getHarjoitusOhjelma();
+    abstract void setHarjoitusAikaTaulu();
+    abstract void setHarjoitusAikaTaulu(Integer aika);
+    abstract Integer getHarjoitusAikaTaulu();
 
+    @Override
+    public String toString(){
+        
+        return(" Name :  " + getName() + "\n" +
+               " Goals;  " + getScoredGoals() + "\n"); 
+        
+    }
     
-    abstract void harjoitusOhjelma();
-    abstract void harjoitusAikaTaulu();
-
 }

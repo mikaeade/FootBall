@@ -5,16 +5,12 @@
  */
 package football;
 
-import java.util.Scanner;
-
 /**
  *
  * @author mikaeade
  */
-
-public class VasenHyokkaaja extends Player {
-
-    //-----Player initial data ---------
+public class KeskusHyokkaaja extends Player {
+//-----Player initial data ---------
     
     @Override
     public void setHarjoitusOhjelma() {
