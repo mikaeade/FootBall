@@ -9,13 +9,14 @@ package football;
  *
  * @author mikaeade
  */
-public class KeskusHyokkaaja extends Player {
-//-----Player initial data ---------
+
+public class OikeaHyokkaaja extends Player {
+
     //-----Player initial data ---------
     
     @Override
     public void setHarjoitusOhjelma() {
-        harjoistusOhjelma = "tee maali, potkuja !!, eikä yhtään ohi!!";
+        harjoistusOhjelma = "levitä Kenttää, Hei!!!!,";
     }
     
     @Override
@@ -41,21 +42,11 @@ public class KeskusHyokkaaja extends Player {
     }  
     @Override
     public Integer getHarjoitusAikaTaulu() {
-        System.out.println("HarjoitusAikaTaulu Keskus hyökkääjä, alkaa nyt");
+        System.out.println("HarjoitusAikaTaulu oikeahyökkääjä, alkaa nyt");
         // joku Timer() hässäkkä   
         return this.harjoitusAika;
-    } 
-    
-    @Override
-    public void setScoredGoals(Integer scoredGoals) {
-        super.setScoredGoals(scoredGoals); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Integer getScoredGoals() {
-        return super.getScoredGoals(); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    }  
+ 
     @Override 
     public String toString(){
         return(super.toString() + 

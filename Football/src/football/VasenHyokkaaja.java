@@ -5,27 +5,28 @@
  */
 package football;
 
-import java.util.Scanner;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
  * @author mikaeade
  */
-
 public class VasenHyokkaaja extends Player {
 
     //-----Player initial data ---------
-    
     @Override
     public void setHarjoitusOhjelma() {
         harjoistusOhjelma = "Juoksua Juoksua, JUOKSE!!!! PRKL";
     }
-    
+
     @Override
     public void setHarjoitusOhjelma(String ohjelma) {
         harjoistusOhjelma = "ohjelma";
     }
-    
+
     @Override
     public String getHarjoitusOhjelma() {
         return this.harjoistusOhjelma;
@@ -33,46 +34,23 @@ public class VasenHyokkaaja extends Player {
 
     @Override
     public void setHarjoitusAikaTaulu() {
-        
+        // tähän joku helvetin observer hässäkkä 
         // joku Timer() hässäkkä        
-    }  
-    @Override
-    public void setHarjoitusAikaTaulu(Integer harjoitusAika) {
-        
-        this.harjoitusAika = harjoitusAika;
-        System.out.println("Aseta aika timerille");
-        // joku Timer() hässäkkä        
-    }  
+    }
+
     @Override
     public Integer getHarjoitusAikaTaulu() {
         System.out.println("HarjoitusAikaTaulu vasenhyökkääjä, alkaa nyt");
         // joku Timer() hässäkkä   
         return this.harjoitusAika;
-    }  
- 
-    
-    //------------Player when playing a game ----------------
-    
-    
-    @Override
-    void setPelaaOttelu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String getPelaaOttelu() {
-        
-        return "";
-    }
-    
-    
-    @Override
-    public void setScoredGoals(Integer scoredGoals) {
-        super.setScoredGoals(scoredGoals); //To change body of generated methods, choose Tools | Templates.
-    }
+    public String toString() {
+        return (super.toString()
+                + "Goals:  " + getScoredGoals() + "\n"
+                + "Practices: " + getHarjoitusOhjelma() + "\n");
 
-    @Override
-    public Integer getScoredGoals() {
-        return super.getScoredGoals(); //To change body of generated methods, choose Tools | Templates.
     }
 }
+

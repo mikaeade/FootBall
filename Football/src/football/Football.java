@@ -17,8 +17,7 @@ public class Football {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Manager manager = new Manager();
-             
+       // Manager manager = new Manager();
+        Manager.getInstance().startProgram();
     }
-    
 }
